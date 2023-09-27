@@ -12,7 +12,6 @@ export default function AccordionPage() {
 
     const codeSnipet = {
     key1: `
-    import React from 'react';
     import Accordion from './(component)/Accordion';
     
     export default function AccordionPage() {
