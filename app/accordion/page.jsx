@@ -2,7 +2,7 @@ import React from 'react';
 import Accordion from './(component)/Accordion';
 import CodeSnipet from './(component)/CodeSnipet';
 
-export default async function AccordionPage() {
+export default function AccordionPage() {
 
     const accordionData = [
         {id: 1, name: 'next.js', body: 'The React Framework for the Web Used by some of the worlds largest companies, Next.js enables you to create full-stack Web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds.,'},
