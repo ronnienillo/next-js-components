@@ -15,7 +15,6 @@ export default async function AccordionPage() {
     key1: `
     import React from 'react';
     import Accordion from './(component)/Accordion';
-    import getAllData from "@/app/(api)/getData";
     
     export default async function AccordionPage() {
     
