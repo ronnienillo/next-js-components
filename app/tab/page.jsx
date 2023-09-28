@@ -133,7 +133,7 @@ export default function TabPage() {
       <h1 className="text-4xl mb-8 mt-8">Tab</h1>
 
       <div className="border border-slate-100 relative rounded overflow-hidden">
-        <ul className="sm:flex">
+        <ul className="flex">
           {tabData.map((item) => (
             <li key={item.id} className="w-full" id={item.id}>
               <a
@@ -143,7 +143,7 @@ export default function TabPage() {
                 onClick={() => handleTabClick(item.id)}
               >
                 {item.icon}
-                {item.name}
+                <span className="hidden sm:inline-block">{item.name}</span>
               </a>
             </li>
           ))}
