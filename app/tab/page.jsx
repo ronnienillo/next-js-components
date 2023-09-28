@@ -1,10 +1,13 @@
 
 "use client"
 
-import React, { useState } from 'react';
+
 import Nav from '../(components)/Nav';
+import CodeSnipet from '../(components)/CodeSnipet';
 import { TbBrandNextjs, TbBrandNuxt, TbBrandSvelte } from "react-icons/tb";
 import { FaCopy } from "react-icons/fa";
+
+import React, { useState } from 'react';
 
 export default function TabPage() {
   const [openTab, setOpenTab] = useState(1);
@@ -46,7 +49,6 @@ export default function TabPage() {
 "use client"
 
 import React, { useState } from 'react';
-import Nav from '../(components)/Nav';
 import { TbBrandNextjs, TbBrandNuxt, TbBrandSvelte } from "react-icons/tb";
 
 export default function TabPage() {
@@ -80,7 +82,6 @@ export default function TabPage() {
       setOpenTab(tabId);
     }
   };
-
 
   return (
     <div>
@@ -162,32 +163,8 @@ export default function TabPage() {
         </div>
       </div>
 
-      <h2 className="text-xl mt-8">Code</h2>
-      <p className="mb-4">
-        Create your page
-      </p>
-      <pre className="text-sm bg-gray-800 text-white relative px-4 mb-4">
-        <button
-            onClick={copyToClipboard}
-            className="absolute top-[15px] right-[15px] text-xl cursor-pointer flex align-center gap-1 z-10"
-        >
-            <FaCopy />
-            <span className="text-xs">Copy</span>
-        </button>
-
-
-        {isCopied && (
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50 text-white z-20">
-            Copied!
-            </div>
-        )}
-
-        <div className="relative overflow-x-auto">
-        {codeSnipet.key}
-        </div>
-        
-        
-        </pre>
+      <h2 className="text-xl mt-8 mb-4">Code</h2>
+      <CodeSnipet codeSnipet={codeSnipet.key}/>
       <Nav />
     </div>
   );
