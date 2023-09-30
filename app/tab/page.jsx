@@ -5,7 +5,6 @@
 import Nav from '../(components)/Nav';
 import CodeSnipet from '../(components)/CodeSnipet';
 import { TbBrandNextjs, TbBrandNuxt, TbBrandSvelte } from "react-icons/tb";
-import { FaCopy } from "react-icons/fa";
 
 import React, { useState } from 'react';
 
@@ -115,19 +114,6 @@ export default function TabPage() {
 }
     `
   }
-
-
-  const [isCopied, setIsCopied] = useState(false);
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(codeSnipet);
-    setIsCopied(true);
-
-    // Reset the "Copied" state after a short delay
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 1500);
-  };
 
   return (
     <div>
