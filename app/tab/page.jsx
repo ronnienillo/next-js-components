@@ -83,32 +83,27 @@ export default function TabPage() {
   };
 
   return (
-    <div>
+    <div className="border border-slate-100 relative rounded overflow-hidden">        
+      
+      <ul className="flex">
+        {tabData.map((item) => (
+          <li key={item.id} className="w-full" id={item.id}>
+            <a className={\`text-2xl px-8 py-2 cursor-pointer flex items-center gap-1 text-center justify-center $\{openTab === item.id ? 'bg-[#ff6873] text-white pointer-events-none' : 'bg-[#fff] text-[#ff6873]'}\`} onClick={() => handleTabClick(item.id)}>
+              {item.icon}
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
 
-      <h1 className="text-4xl mb-8 mt-8">Tab</h1>
-
-      <div className="border border-slate-100 relative rounded overflow-hidden">
-        
-        <ul className="flex">
-          {tabData.map((item) => (
-            <li key={item.id} className="w-full" id={item.id}>
-              <a className={\`text-2xl px-8 py-2 cursor-pointer flex items-center gap-1 text-center justify-center $\{openTab === item.id ? 'bg-[#ff6873] text-white pointer-events-none' : 'bg-[#fff] text-[#ff6873]'}\`} onClick={() => handleTabClick(item.id)}>
-                {item.icon}
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <div className="py-4 px-4 text-[#30455ccc]">
-          {tabData.map((item) => (
-            <div key={item.id} className={\`relative overflow-hidden transition-all ease-in-out delay-150 duration-500 $\{openTab === item.id ? 'max-h-[800px]' : 'max-h-0'}\`}>
-              <p className={\`py-4 transition-all ease-in-out delay-200 duration-500 $\{openTab === item.id ? 'opacity-1 translate-y-0' : 'opacity-0 translate-y-8'}\`}>{item.body}</p>
-            </div>
-          ))}
-        </div>
-
+      <div className="py-4 px-4 text-[#30455ccc]">
+        {tabData.map((item) => (
+          <div key={item.id} className={\`relative overflow-hidden transition-all ease-in-out delay-150 duration-500 $\{openTab === item.id ? 'max-h-[800px]' : 'max-h-0'}\`}>
+            <p className={\`py-4 transition-all ease-in-out delay-200 duration-500 $\{openTab === item.id ? 'opacity-1 translate-y-0' : 'opacity-0 translate-y-8'}\`}>{item.body}</p>
+          </div>
+        ))}
       </div>
+
     </div>
   );
 }

@@ -94,16 +94,15 @@ const ModalPage = () => {
 
     return (
         <>
-            <h1 className="text-4xl mb-8 mt-8">Modal</h1>
             <div className="flex items-center gap-4 flex-wrap mb-8">
                 {modalData.map((item) => (
                     <button key={item.id} id={item.id} className="bg-[#ff6873] text-white text-center py-3 px-6 font-semibold rounded flex items-center justify-center" onClick={() => modalHandler(item.id)}><i className="mr-3 text-2xl">{item.icon}</i>{item.name}</button>
                 ))}
             </div>
             {modalData.map((item) => (
-                <div key={item.id} className={\`fixed overflow-hidden overflow-y-auto inset-0 w-full h-full flex items-center justify-center flex-col p-4 transition-all ease-in-out duration-500 $\{openModal === item.id ? 'opacity-1 z-50' : 'opacity-0 -z-50'}\`}>
+                <div key={item.id} className={\`fixed overflow-hidden overflow-y-auto inset-0 w-full h-full flex items-center justify-center flex-col p-4 transition-all ease-in-out delay-150 duration-500 $\{openModal === item.id ? 'opacity-1 z-50' : 'opacity-0 -z-50'}\`}>
                     <div className={\`absolute inset-0 w-full h-full bg-[rgba(0,0,0,0.75)] transition-all ease-in-out delay-150 duration-500 $\{openModal === item.id ? 'opacity-1' : 'opacity-0'}\`} onClick={closeModal}></div>
-                    <div className={\`bg-white max-w max-w-xl p-4 rounded relative z-10 shadow shadow-white transition-all ease-in-out delay-500 duration-500 $\{openModal === item.id ? 'opacity-1 translate-y-0' : 'opacity-0 -translate-y-8'}\`}>
+                    <div className={\`bg-white max-w max-w-xl p-4 rounded relative z-10 shadow shadow-white transition-all ease-in-out delay-500 duration-700 $\{openModal === item.id ? 'opacity-1 translate-y-0' : 'opacity-0 -translate-y-8'}\`}>
                         <AiOutlineClose className="absolute top-3 right-3 cursor-pointer text-[#30455ccc] text-xl" onClick={closeModal}/>
                         <h1 className="text-4xl mb-4 mt-4 text-[#ff6873] flex items-center"><i className="text-5xl mr-3">{item.icon}</i>{item.name}</h1>
                         <p className="text-[#30455ccc]">{item.body}</p>
@@ -127,9 +126,9 @@ export default ModalPage;
                 ))}
             </div>
             {modalData.map((item) => (
-                <div key={item.id} className={`fixed overflow-hidden overflow-y-auto inset-0 w-full h-full flex items-center justify-center flex-col p-4 transition-all ease-in-out duration-500 ${openModal === item.id ? 'opacity-1 z-50' : 'opacity-0 -z-50'}`}>
+                <div key={item.id} className={`fixed overflow-hidden overflow-y-auto inset-0 w-full h-full flex items-center justify-center flex-col p-4 transition-all ease-in-out delay-150 duration-500 ${openModal === item.id ? 'opacity-1 z-50' : 'opacity-0 -z-50'}`}>
                     <div className={`absolute inset-0 w-full h-full bg-[rgba(0,0,0,0.75)] transition-all ease-in-out delay-150 duration-500 ${openModal === item.id ? 'opacity-1' : 'opacity-0'}`} onClick={closeModal}></div>
-                    <div className={`bg-white max-w max-w-xl p-4 rounded relative z-10 shadow shadow-white transition-all ease-in-out delay-500 duration-500 ${openModal === item.id ? 'opacity-1 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
+                    <div className={`bg-white max-w max-w-xl p-4 rounded relative z-10 shadow shadow-white transition-all ease-in-out delay-500 duration-700 ${openModal === item.id ? 'opacity-1 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
                         <AiOutlineClose className="absolute top-3 right-3 cursor-pointer text-[#30455ccc] text-xl" onClick={closeModal}/>
                         <h1 className="text-4xl mb-4 mt-4 text-[#ff6873] flex items-center"><i className="text-5xl mr-3">{item.icon}</i>{item.name}</h1>
                         <p className="text-[#30455ccc]">{item.body}</p>

@@ -81,8 +81,7 @@ export default function AccordionPage() {
     };
 
     return (
-        <div>
-            <h1 className="text-4xl mb-8 mt-8">Accordion</h1>
+        <>
             {accordionData.map((item) => (
                 <div key={item.id}>
                     <div className={\`py-6 border-t flex items-center justify-between cursor-pointer $\{openAccordionId === item.id ? 'pointer-events-none' : ''}\`} onClick={() => toggleAccordion(item.id)}>
@@ -101,7 +100,7 @@ export default function AccordionPage() {
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     );
 }
         
