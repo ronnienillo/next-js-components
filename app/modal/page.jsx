@@ -94,9 +94,9 @@ const ModalPage = () => {
 
     return (
         <>
-            <div className="flex items-center gap-4 flex-wrap mb-8">
+            <div className="flex items-center gap-2 sm:gap-4 flex-wrap mb-8">
                 {modalData.map((item) => (
-                    <button key={item.id} id={item.id} className="bg-[#ff6873] text-white text-center py-3 px-6 font-semibold rounded flex items-center justify-center" onClick={() => modalHandler(item.id)}><i className="mr-3 text-2xl">{item.icon}</i>{item.name}</button>
+                    <button key={item.id} id={item.id} className="text-sm sm:text-base bg-[#ff6873] text-white text-center py-3 px-3 sm:px-6 font-semibold rounded flex items-center justify-center" onClick={() => modalHandler(item.id)}><i className="mr-2 sm:mr-3 text-xl sm:text-2xl">{item.icon}</i>{item.name}</button>
                 ))}
             </div>
             {modalData.map((item) => (
@@ -120,9 +120,9 @@ export default ModalPage;
         
         <div className="">
             <h1 className="text-4xl mb-8 mt-8">Modal</h1>
-            <div className="flex items-center gap-4 flex-wrap mb-8">
+            <div className="flex items-center gap-2 sm:gap-4 flex-wrap mb-8">
                 {modalData.map((item) => (
-                    <button key={item.id} id={item.id} className="bg-[#ff6873] text-white text-center py-3 px-6 font-semibold rounded flex items-center justify-center" onClick={() => modalHandler(item.id)}><i className="mr-3 text-2xl">{item.icon}</i>{item.name}</button>
+                    <button key={item.id} id={item.id} className="text-sm sm:text-base bg-[#ff6873] text-white text-center py-3 px-3 sm:px-6 font-semibold rounded flex items-center justify-center" onClick={() => modalHandler(item.id)}><i className="mr-2 sm:mr-3 text-xl sm:text-2xl">{item.icon}</i>{item.name}</button>
                 ))}
             </div>
             {modalData.map((item) => (
