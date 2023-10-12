@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import Nav from "../(components)/Nav";
 import CodeSnipet from '../(components)/CodeSnipet';
 
-const CarouselPage = ({autoSlide = false, slideInterval = 3000}) => {
+const CarouselPage = ({autoSlide = true, slideInterval = 3000}) => {
     const [current, setCurrent] = useState(0);
 
     const prev = () => setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
@@ -47,7 +47,7 @@ import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import React, { useState, useEffect } from 'react';
 
-const CarouselPage = ({autoSlide = false, slideInterval = 3000}) => {
+const CarouselPage = ({autoSlide = true, slideInterval = 3000}) => {
     const [current, setCurrent] = useState(0);
 
     const prev = () => setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
