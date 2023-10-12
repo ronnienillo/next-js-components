@@ -5,9 +5,9 @@
 
 import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const CarouselPage = () => {
+const CarouselPage = ({autoSlide = true, slideInterval = 3000}) => {
     const [current, setCurrent] = useState(0);
 
     const prev = () => setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
@@ -15,6 +15,21 @@ const CarouselPage = () => {
     const next = () => setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
 
     const handleDotClick = (index) => setCurrent(index);
+
+    const [autoSlideInterval, setAutoSlideInterval] = useState(null);
+
+    useEffect(() => {
+        if (autoSlide) {
+            const interval = setInterval(() => {
+                next();
+            }, slideInterval);
+            setAutoSlideInterval(interval);
+
+            return () => {
+                clearInterval(interval);
+            };
+        }
+    }, [autoSlide]);
 
     const slides = [
         "/next-js.jpg",
